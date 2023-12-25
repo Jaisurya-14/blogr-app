@@ -1,0 +1,136 @@
+.header-con{
+    position: relative;
+    z-index: 1;
+    padding: .5em;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: block;
+    margin-right: 1em;
+}
+// navigation
+.nav {
+    width: 90%;
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 6px;
+    }
+    &__item {
+        margin-bottom: 1em;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        color: $dark-blue;
+        font-weight: 700;
+        cursor: pointer;
+        display: none;
+       &--opened {
+        display: block;
+       }
+
+       &__con {
+            display: flex;
+            flex-flow: column wrap;
+       }
+       &:hover {
+        & .nav__dropdown {
+            display: block;
+            transition: 100ms ease-in;
+        }
+       }
+    }
+    &__btn{
+        color: inherit;
+        font-size: 1.125rem;
+    }
+    &__btn--primary {
+        border-radius: 25vw;
+        padding: 1em 3em;
+        background-image: linear-gradient($gradient-very-light-red,$gradient-light-red);
+        color: $white;
+
+        &:hover,
+        &:focus {
+            color: $dark-blue;
+        }
+    }
+
+    &__dropdown {
+        background-color: $grayish-blue;
+        border-radius: 4px;
+        position: static;
+        display: none;
+        margin: 0 1.5em;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+        &__item {
+            margin-bottom: 1em;
+            padding: 1em 3em;
+            &:hover,
+            &:focus {
+                background-color: $white;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .header__nav-menu {
+        display: none;
+    }
+    .nav {
+        &__list {
+            flex-direction: row;
+            background: transparent;
+            border: none;
+        }
+        &__item {
+            display: block;
+            color: $white;
+            padding: 0;
+            margin: 0;
+            margin-right: 1.5em;
+            width: auto;
+        }
+        &__item--actions {
+            flex-grow: 2;
+            text-align: right;
+        }
+        &__btn--primary {
+            background-image: none;
+            background-color: $white;
+            color: $light-red;
+
+            &:focus,
+            &:hover {
+                color: $very-light-red;
+            }
+        }
+        &__dropdown {
+            background-color: $white;
+            color: $dark-blue;
+            position: absolute;
+            z-index: 1;
+            transform: translate(-2.5rem,2.5rem);
+            &__item {
+                &:hover,
+                &:focus {
+                    background-color: $grayish-blue;
+                }
+            }
+        }
+    }
+}
