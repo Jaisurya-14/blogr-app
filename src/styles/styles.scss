@@ -1,0 +1,13 @@
+@import './resets.scss';
+@import './constants.scss';
+@import './typography.scss';
+@import './utility.scss';
+@import './header.scss';
+@import './blogr_hero.scss';
+
+//  layouts
+main {
+     width: 100%;
+     max-width: 1440px;
+     margin: auto;
+}
