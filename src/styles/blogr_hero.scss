@@ -1,12 +1,8 @@
 .blogr-hero {
     position: relative;
     background-image: linear-gradient($gradient-very-light-red,$gradient-light-red);
-    padding: 5em 0.75em;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    padding: 5em 0;
+    width: 100%;
     text-align: center;
     border-bottom-left-radius: 60px;
     color: $white;
@@ -14,7 +10,7 @@
     &__con {
         width: 100%;
         max-width: 650px;
-        margin: 5em auto;
+        margin: 5em auto 0 auto;
         display: flex;
         flex-direction: column;
     }
