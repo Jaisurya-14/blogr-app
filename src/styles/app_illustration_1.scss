@@ -1,0 +1,95 @@
+.illustration {
+    margin : 1em 0;
+    text-align: center;
+
+    &--featured {
+        background:  $gradient-dark-dessaturated-blue;
+        color: $white;
+        border-bottom-left-radius: 10vw;
+        border-top-right-radius: 10vw;
+        background-image: url('../assets/images/bg-pattern-circles.svg');
+        .illustration__content__title {
+            font-size: 2rem;
+            color: $white;
+        }
+
+        .illustration__img-con {
+            max-width: 550px;
+            // background-image: url('../assets/images/bg-pattern-circles.svg');
+            &::before {
+                padding-top: 75%;
+            }
+            img {
+                top:-15%;
+            }
+        }
+        
+    }
+
+    &__con {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+
+        &--featured {
+            overflow: visible;
+        }
+    }
+
+    &__content {
+        &-wrapper {
+            text-align: center;
+            padding: 1.5em 3em;
+            max-width: 475px;
+        }
+    }
+    &__img-con {
+        position: relative;
+        width: 100%;
+        max-width: 950px;
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+        }
+        img {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+        };
+    }
+}
+
+@media (min-width: 500px) {
+    .illustration {
+        margin: 5em 0;
+        &__con {
+            flex-direction: row;
+            justify-content: center;
+
+            &--featured {
+                overflow: visible;
+            }
+        }
+        &__content {
+            &-wrapper {
+                text-align: left;
+            }
+        }
+        &__img-con {
+            &--shift-left{
+                transform: translateX(-50%);
+            }
+            &--shift-right{
+                transform: translateX(50%);
+            }
+        }
+
+    }
+}
