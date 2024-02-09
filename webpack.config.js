@@ -6,6 +6,7 @@ const path = require('path');
 
 module.exports = {
     mode : 'development',
+    devtool: 'source-map',
     entry : {
         app : path.resolve(__dirname,'src/app.js')
     },
@@ -33,15 +34,27 @@ module.exports = {
         },
         {
             test : /\.s?css$/i,
-            use : ['style-loader','css-loader','sass-loader']
+            use : [
+                {
+                loader : 'style-loader'
+                },
+                {
+                loader: 'css-loader',
+                },
+                {
+                loader: 'sass-loader'
+                }
+            ]
         },
         {
             test: /\.(png|jpe?g|svg|png)$/,
             loader: 'url-loader',
             options : {
-                limit : 8000,
-                name: '[name]-[hash].[ext]'
-            }
+                limit : 100,
+                name: '[name]-[hash].[ext]',
+                esModule: false
+            },
+            type: 'javascript/auto'
         }
         ]
     },
@@ -55,7 +68,8 @@ module.exports = {
     ],
     devServer : {
         static : {
-            directory : path.resolve(__dirname,'./dist')
+            directory : path.resolve(__dirname,'./dist'),
+            publicPath: '/dist/'
         },
         hot: true,
         port: 9000,

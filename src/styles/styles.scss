@@ -4,10 +4,29 @@
 @import './utility.scss';
 @import './header.scss';
 @import './blogr_hero.scss';
-
+@import './app_illustration_1.scss';
+@import './footer.scss';
 //  layouts
-main {
+.content {
      width: 100%;
+}
+
+
+.container {
      max-width: 1440px;
-     margin: auto;
+     margin : 0 1em;
+}
+
+@media (min-width: 550px) {
+     .container {
+          margin: auto;
+     }
+     .content {
+          width: 100vw;
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+     }
 }
