@@ -6,6 +6,8 @@ body {
     font-size: $font-size-base;
     font-family: 'Overpass' , sans-serif;
     background-color: $white;
+    color: $dark-grayish-blue;
+    line-height: 1.5;
 }
 
 a {
@@ -19,6 +21,10 @@ button {
     cursor: pointer;
 }
 
+h2 {
+    font-family: 'Ubuntu' , sans-serif;
+    color: $dark-blue;
+}
 
 // button styles
 
@@ -49,29 +55,35 @@ button {
 h1,
 .h1 {
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.75;
 }
 
 h2,
 .h2 {
-    font-size: 1.5rem;
-    line-height: 1.25;
+    font-size: 1.875rem;
+    line-height: 1.5;
 }
 
 h3,
 .h3 {
-    font-size: 1.2rem;
-    line-height: 1.125;
+    font-size: 1.5rem;
+    line-height: 1.25;
 }
 
 h4,
 .h4 {
-    font-size: 1.125rem;
-    line-height: 1;
+    font-size: 1.2rem;
+    line-height: 1.125;
 }
 
 h5,
 .h5 {
     font-size: 1rem;
-    line-height: 0.8;
+    line-height: 1;
+}
+
+h6,
+.h6 {
+    font-size : 0.875rem;
+    line-height: 0.85;
 }
